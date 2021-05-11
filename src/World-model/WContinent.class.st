@@ -2,7 +2,8 @@ Class {
 	#name : #WContinent,
 	#superclass : #WEntity,
 	#instVars : [
-		'#countries => FMMany type: #WCountry opposite: #continent'
+		'#countries => FMMany type: #WCountry opposite: #continent',
+		'#name => FMProperty'
 	],
 	#category : #'World-model-Entities'
 }
@@ -43,4 +44,18 @@ WContinent >> countriesGroup [
 	<generated>
 	<navigation: 'Countries'>
 	^ MooseSpecializedGroup withAll: self countries asSet
+]
+
+{ #category : #accessing }
+WContinent >> name [
+
+	<FMProperty: #name type: #String>
+	<generated>
+	^ name
+]
+
+{ #category : #accessing }
+WContinent >> name: anObject [
+	<generated>
+	name := anObject
 ]

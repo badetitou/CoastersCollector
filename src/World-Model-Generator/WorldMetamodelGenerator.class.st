@@ -34,6 +34,15 @@ WorldMetamodelGenerator >> defineClasses [
 ]
 
 { #category : #definition }
+WorldMetamodelGenerator >> defineProperties [
+
+	continent property: #name type: #String.
+	country property: #name type: #String.
+	region property: #name type: #String.
+	city property: #name type: #String
+]
+
+{ #category : #definition }
 WorldMetamodelGenerator >> defineRelations [
 
 	super defineRelations.

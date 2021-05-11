@@ -3,6 +3,7 @@ Class {
 	#superclass : #WEntity,
 	#instVars : [
 		'#continent => FMOne type: #WContinent opposite: #countries',
+		'#name => FMProperty',
 		'#regions => FMMany type: #WRegion opposite: #country'
 	],
 	#category : #'World-model-Entities'
@@ -44,6 +45,20 @@ WCountry >> continentGroup [
 	<generated>
 	<navigation: 'Continent'>
 	^ MooseSpecializedGroup with: self continent
+]
+
+{ #category : #accessing }
+WCountry >> name [
+
+	<FMProperty: #name type: #String>
+	<generated>
+	^ name
+]
+
+{ #category : #accessing }
+WCountry >> name: anObject [
+	<generated>
+	name := anObject
 ]
 
 { #category : #accessing }

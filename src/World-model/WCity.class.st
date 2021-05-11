@@ -2,6 +2,7 @@ Class {
 	#name : #WCity,
 	#superclass : #WEntity,
 	#instVars : [
+		'#name => FMProperty',
 		'#region => FMOne type: #WRegion opposite: #cities'
 	],
 	#category : #'World-model-Entities'
@@ -14,6 +15,20 @@ WCity class >> annotation [
 	<package: #'World-model'>
 	<generated>
 	^self
+]
+
+{ #category : #accessing }
+WCity >> name [
+
+	<FMProperty: #name type: #String>
+	<generated>
+	^ name
+]
+
+{ #category : #accessing }
+WCity >> name: anObject [
+	<generated>
+	name := anObject
 ]
 
 { #category : #accessing }

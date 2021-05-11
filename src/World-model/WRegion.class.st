@@ -2,8 +2,9 @@ Class {
 	#name : #WRegion,
 	#superclass : #WEntity,
 	#instVars : [
+		'#cities => FMMany type: #WCity opposite: #region',
 		'#country => FMOne type: #WCountry opposite: #regions',
-		'#cities => FMMany type: #WCity opposite: #region'
+		'#name => FMProperty'
 	],
 	#category : #'World-model-Entities'
 }
@@ -67,4 +68,18 @@ WRegion >> countryGroup [
 	<generated>
 	<navigation: 'Country'>
 	^ MooseSpecializedGroup with: self country
+]
+
+{ #category : #accessing }
+WRegion >> name [
+
+	<FMProperty: #name type: #String>
+	<generated>
+	^ name
+]
+
+{ #category : #accessing }
+WRegion >> name: anObject [
+	<generated>
+	name := anObject
 ]
