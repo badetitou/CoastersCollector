@@ -14,7 +14,7 @@ Class {
 WorldMetamodelGenerator class >> packageName [
 
 	<ignoreForCoverage>
-	^ #'World-model'
+	^ #'World-Model'
 ]
 
 { #category : #accessing }

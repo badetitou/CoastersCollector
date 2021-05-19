@@ -7,7 +7,7 @@ Class {
 { #category : #accessing }
 CMModel class >> allSubmetamodelsPackagesNames [
 	<generated>
-	^ #(#'World-model' #'CoasterCollector-Model')
+	^ #(#'World-Model' #'CoasterCollector-Model')
 ]
 
 { #category : #meta }
