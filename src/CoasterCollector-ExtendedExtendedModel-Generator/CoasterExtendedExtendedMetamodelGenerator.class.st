@@ -5,7 +5,7 @@ Class {
 		'coaster',
 		'oval'
 	],
-	#category : #'CoasterCollector-ExtentedExtendedModel-Generator'
+	#category : #'CoasterCollector-ExtendedExtendedModel-Generator'
 }
 
 { #category : #accessing }

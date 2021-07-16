@@ -5,7 +5,7 @@ Class {
 		'event',
 		'creator'
 	],
-	#category : #'CoasterCollector-ExtentedModel-Generator'
+	#category : #'CoasterCollector-ExtendedModel-Generator'
 }
 
 { #category : #accessing }
