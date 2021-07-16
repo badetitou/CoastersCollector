@@ -1,0 +1,12 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'Coaster',
+      #directory : 'src',
+      #platforms : [ #pharo ],
+      #onConflict : #useIncoming,
+      #onUpgrade : #useIncoming
+    }
+  ],
+  #failOnZeroTests : false 
+}
