@@ -8,8 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PROJECT_NAME: PharoLanguageServer
     strategy:
       matrix:
         smalltalk: [ Moose64-9.0]
