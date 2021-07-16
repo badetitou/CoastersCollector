@@ -27,16 +27,35 @@ jobs:
 
       - name: Build meta-model planuml image
         run: |
-          $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'uml.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new model: CCModel; beWithStub; generatePlantUMLModel)]."
-      - name: Generate PNG Diagrams
+          $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'coaster.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new model: CCModel; beWithStub; generatePlantUMLModel)]."
+          $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'coasterExtended.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new model: CCEModel; beWithStub; generatePlantUMLModel)]."
+          $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'world.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new model: WModel; beWithStub; generatePlantUMLModel)]."
+          $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'connect.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new model: CMModel; beWithStub; generatePlantUMLModel)]."
+      
+      - name: Generate Coaster PNG Diagrams
         uses: cloudbees/plantuml-github-action@master
         with:
-            args: -v -tpng uml.puml
-          
+            args: -v -tpng coaster.puml
+     
+      - name: Generate Coaster Extended Diagrams
+        uses: cloudbees/plantuml-github-action@master
+        with:
+            args: -v -tpng coasterExtended.puml
+
+      - name: Generate World Diagrams
+        uses: cloudbees/plantuml-github-action@master
+        with:
+            args: -v -tpng world.puml
+            
+      - name: Generate Connect Diagrams
+        uses: cloudbees/plantuml-github-action@master
+        with:
+            args: -v -tpng connect.puml
+            
       - name: Move artifact
         run: |
           mkdir doc-uml
-          mv uml.png doc-uml
+          mv *.png doc-uml
       
       - name: Init new repo in dist folder and commit generated files
         run: |
