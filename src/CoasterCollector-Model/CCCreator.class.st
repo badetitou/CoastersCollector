@@ -1,9 +1,9 @@
 Class {
 	#name : #CCCreator,
-	#superclass : #MooseEntity,
+	#superclass : #CCEntity,
 	#instVars : [
-		'#name => FMProperty',
-		'#coasters => FMMany type: #CCCoaster opposite: #creator'
+		'#coasters => FMMany type: #CCCoaster opposite: #creator',
+		'#name => FMProperty'
 	],
 	#category : #'CoasterCollector-Model-Entities'
 }
@@ -11,17 +11,10 @@ Class {
 { #category : #meta }
 CCCreator class >> annotation [
 
-	<FMClass: #Creator super: #MooseEntity>
+	<FMClass: #Creator super: #CCEntity>
 	<package: #'CoasterCollector-Model'>
 	<generated>
 	^self
-]
-
-{ #category : #meta }
-CCCreator class >> metamodel [
-
-	<generated>
-	^ CCModel metamodel
 ]
 
 { #category : #adding }

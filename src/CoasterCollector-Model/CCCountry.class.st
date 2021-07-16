@@ -1,9 +1,9 @@
 Class {
 	#name : #CCCountry,
-	#superclass : #MooseEntity,
+	#superclass : #CCEntity,
 	#instVars : [
-		'#name => FMProperty',
-		'#coasters => FMMany type: #CCCoaster opposite: #country'
+		'#coasters => FMMany type: #CCCoaster opposite: #country',
+		'#name => FMProperty'
 	],
 	#category : #'CoasterCollector-Model-Entities'
 }
@@ -11,17 +11,10 @@ Class {
 { #category : #meta }
 CCCountry class >> annotation [
 
-	<FMClass: #Country super: #MooseEntity>
+	<FMClass: #Country super: #CCEntity>
 	<package: #'CoasterCollector-Model'>
 	<generated>
 	^self
-]
-
-{ #category : #meta }
-CCCountry class >> metamodel [
-
-	<generated>
-	^ CCModel metamodel
 ]
 
 { #category : #adding }

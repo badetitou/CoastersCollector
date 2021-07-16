@@ -1,12 +1,12 @@
 Class {
 	#name : #CCCoaster,
-	#superclass : #MooseEntity,
+	#superclass : #CCEntity,
 	#instVars : [
+		'#country => FMOne type: #CCCountry opposite: #coasters',
+		'#creator => FMOne type: #CCCreator opposite: #coasters',
 		'#image => FMProperty',
 		'#owned => FMProperty',
-		'#shape => FMOne type: #CCShape opposite: #coasters',
-		'#country => FMOne type: #CCCountry opposite: #coasters',
-		'#creator => FMOne type: #CCCreator opposite: #coasters'
+		'#shape => FMOne type: #CCShape opposite: #coasters'
 	],
 	#category : #'CoasterCollector-Model-Entities'
 }
@@ -14,17 +14,10 @@ Class {
 { #category : #meta }
 CCCoaster class >> annotation [
 
-	<FMClass: #Coaster super: #MooseEntity>
+	<FMClass: #Coaster super: #CCEntity>
 	<package: #'CoasterCollector-Model'>
 	<generated>
 	^self
-]
-
-{ #category : #meta }
-CCCoaster class >> metamodel [
-
-	<generated>
-	^ CCModel metamodel
 ]
 
 { #category : #accessing }

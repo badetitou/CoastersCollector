@@ -1,6 +1,6 @@
 Class {
 	#name : #CCShape,
-	#superclass : #MooseEntity,
+	#superclass : #CCEntity,
 	#instVars : [
 		'#coasters => FMMany type: #CCCoaster opposite: #shape'
 	],
@@ -10,17 +10,10 @@ Class {
 { #category : #meta }
 CCShape class >> annotation [
 
-	<FMClass: #Shape super: #MooseEntity>
+	<FMClass: #Shape super: #CCEntity>
 	<package: #'CoasterCollector-Model'>
 	<generated>
 	^self
-]
-
-{ #category : #meta }
-CCShape class >> metamodel [
-
-	<generated>
-	^ CCModel metamodel
 ]
 
 { #category : #adding }
