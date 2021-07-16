@@ -3,10 +3,13 @@ SmalltalkCISpec {
     SCIMetacelloLoadSpec {
       #baseline : 'Coaster',
       #directory : 'src',
+      #load : [ 'default' ],
       #platforms : [ #pharo ],
       #onConflict : #useIncoming,
       #onUpgrade : #useIncoming
     }
   ],
-  #failOnZeroTests : false 
+  #testing : {
+    #failOnZeroTests : false
+  }
 }
