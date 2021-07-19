@@ -26,7 +26,7 @@ jobs:
       - name: Build meta-model planuml image
         run: |
           $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'coaster.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new model: CCModel; beWithStub; generatePlantUMLModel)]."
-          $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'coasterExtended.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new withModel: CCModel andColor: Color lightBlue; withModel: CCEModel andColor: Color lightGreen;; beWithStub; generatePlantUMLModel)]."
+          $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'coasterExtended.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new withModel: CCModel andColor: Color lightBlue; withModel: CCEModel andColor: Color lightGreen; beWithStub; generatePlantUMLModel)]."
           $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'world.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new model: WModel; beWithStub; generatePlantUMLModel)]."
           $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'connect.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new model: CMModel; beWithStub; generatePlantUMLModel)]."
       
